@@ -13,6 +13,6 @@ https://www.sthu.org/blog/13-perstopology-peakdetection/index.html
 https://bookstore.ams.org/mbk-69
 https://en.wikipedia.org/wiki/Persistent_homology
 
-[*] Dit algoritme gaan we proberen toe te passen op de data; kijken hoe dat uitpakt.
+[*] Dit algoritme gaan we proberen toe te passen op de data; kijken hoe dat uitpakt. Zie PEAKS.R.
 
 3. Kan de data worden gecomprimeerd? Smoothing functie? Loess???
