@@ -1,0 +1,18 @@
+1. Plots / grafieken verfraaien
+
+
+2. Uitzoeken hoe je trendomslagen, minima, maxima kunt vinden
+
+>> Het Quantmod package bevat de functies findPeaks / findValleys, daar lukt het misschien wel mee.
+
+>> Het automatisch (programmatisch / algoritmisch) identificeren van pieken blijkt best een interessant wetenschappelijk probleem te zijn. Computational Topology, Persistent Homology, etc.
+
+>> Relevante links:
+https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data [*]
+https://www.sthu.org/blog/13-perstopology-peakdetection/index.html
+https://bookstore.ams.org/mbk-69
+https://en.wikipedia.org/wiki/Persistent_homology
+
+[*] Dit algoritme gaan we proberen toe te passen op de data; kijken hoe dat uitpakt.
+
+3. Kan de data worden gecomprimeerd? Smoothing functie? Loess???
