@@ -39,14 +39,18 @@ ThresholdingAlgo <- function(y,lag,threshold,influence) {
 }
 
 # Using it requires defining y, lag, threshold, and influence as inputs:
-y         <- ambient$Temperature
+#
+# Since the function doesn't work with NA's, the dataset should be free
+# from them (otherwise the data and the result will consist of different
+# numbers of observations).
+y         <- na.omit(ambient$Temperature)
 lag       <- 30
 threshold <- 5
 influence <- 0
 
 # Running the algorythm, but note that the dataset contains NA's and those are
 # incompatible with the algorithm. So they should be omitted:
-result <- ThresholdingAlgo(na.omit(y), lag, threshold, influence)
+result <- ThresholdingAlgo(y, lag, threshold, influence)
 
 
 # Code for plotting the result:
