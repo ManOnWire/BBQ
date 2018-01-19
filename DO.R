@@ -11,8 +11,11 @@ ambient_sd <- sd(ambient$Temperature, na.rm = T)
 abline(h = ambient_mean - ambient_sd, col = "orange")
 abline(h = ambient_mean + ambient_sd, col = "orange")
 
-
+# Plot pork temperature:
 plot(pork, type = "l")
+
+# Add line for max temp to the plot:
+abline(h = max(pork$Temperature, na.rm = T), col = "red")
 
 # A histogram of the ambient temperature seems interesting:
 hist(ambient$Temperature, breaks = 20)
