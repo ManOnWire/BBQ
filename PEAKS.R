@@ -44,8 +44,9 @@ lag       <- 30
 threshold <- 5
 influence <- 0
 
-# Running the algorythm:
-result <- ThresholdingAlgo(y, lag, threshold, influence)
+# Running the algorythm, but note that the dataset contains NA's and those are
+# incompatible with the algorithm. So they should be omitted:
+result <- ThresholdingAlgo(na.omit(y), lag, threshold, influence)
 
 
 # Code for plotting the result:
