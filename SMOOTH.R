@@ -12,3 +12,21 @@ smoothed25 <- predict(loessMod25)
 
 # Plot result:
 plot(smoothed25, type = "l")
+
+# Reduce span:
+loessMod10 <- loess(Temperature ~ Index, data = ambient, span = 0.10)
+
+# Get smoothed output:
+smoothed10 <- predict(loessMod10)
+
+# Plot result:
+plot(smoothed10, type = "l")
+
+# Reduce span further:
+loessMod5 <- loess(Temperature ~ Index, data = ambient, span = 0.05)
+
+# Get smoothed output:
+smoothed5 <- predict(loessMod5)
+
+# Plot result:
+plot(smoothed5, type = "l")
