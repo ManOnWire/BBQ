@@ -3,7 +3,14 @@
 plot(ambient, type = "l")
 
 # Add average to the plot:
-abline(h = mean(ambient$Temperature, na.rm = T), col = "green")
+ambient_mean <- mean(ambient$Temperature, na.rm = T)
+abline(h = ambient_mean, col = "green")
+
+# Add standard deviation to plot:
+ambient_sd <- sd(ambient$Temperature, na.rm = T)
+abline(h = ambient_mean - ambient_sd, col = "orange")
+abline(h = ambient_mean + ambient_sd, col = "orange")
+
 
 plot(pork, type = "l")
 
