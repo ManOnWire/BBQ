@@ -1,6 +1,10 @@
 # Now that we have some reasonably clean data, we can do something with it. Like
 # plot some graphs:
 plot(ambient, type = "l")
+
+# Add average to the plot:
+abline(h = mean(ambient$Temperature, na.rm = T), col = "green")
+
 plot(pork, type = "l")
 
 # A histogram of the ambient temperature seems interesting:
