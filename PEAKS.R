@@ -48,6 +48,7 @@ lag       <- 30
 threshold <- 5
 influence <- 0
 
+
 # Running the algorythm, but note that the dataset contains NA's and those are
 # incompatible with the algorithm. So they should be omitted:
 result <- ThresholdingAlgo(y, lag, threshold, influence)
@@ -60,3 +61,9 @@ lines(1:length(y),result$avgFilter,type="l",col="cyan",lwd=2)
 lines(1:length(y),result$avgFilter+threshold*result$stdFilter,type="l",col="green",lwd=2)
 lines(1:length(y),result$avgFilter-threshold*result$stdFilter,type="l",col="green",lwd=2)
 plot(result$signals,type="S",col="red",ylab="",xlab="",ylim=c(-1.5,1.5),lwd=2)
+
+# Evaluation:
+#
+# This functions needs extensive tweaking for it to be useful. The idea of flagging
+# a peak or a valley if the value in the data differs from the average value plus or
+# minus a number of times the standard deviation seems OK, though.
