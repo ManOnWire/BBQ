@@ -75,3 +75,15 @@ plot(result$signals,type="S",col="red",ylab="",xlab="",ylim=c(-1.5,1.5),lwd=2)
 # standard deviation or higher than the mean plus 1x the standard deviation.
 # When its lower we can flag the value as part of a valley, if it's higher
 # we can mark it as member of a peak.
+
+# First set Peak- and ValleyLimits:
+PeakLimit <- mean(ambient$Temperature, na.rm = T) + sd(ambient$Temperature, na.rm = T)
+ValleyLimit <- mean(ambient$Temperature, na.rm = T) - sd(ambient$Temperature, na.rm = T)
+
+# Then perform the tests and set values for membership:
+ambient$Peak_Member[ambient$Temperature > PeakLimit] <- TRUE
+ambient$Peak_Member[ambient$Temperature <= PeakLimit] <- FALSE
+
+ambient$Val_Member[ambient$Temperature < ValleyLimit] <- TRUE
+ambient$Val_Member[ambient$Temperature >= ValleyLimit] <- FALSE
+
