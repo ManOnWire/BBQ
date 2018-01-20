@@ -3,48 +3,22 @@
 # Found this resourse online:
 # http://r-statistics.co/Loess-Regression-With-R.html
 
+# Set span variable for Loess function:
+SPAN <- 0.03
+# This value seems to perform the right amount of smoothing,
+# but not too much.
+# Other values tried: 0.25, 0.10, 0.05 -- all way to loose,
+# and 0.01 -- not smooth enough.
+
 # Create Loess variable:
-ambient$Index <- 1:nrow(ambient)
-loessMod25 <- loess(Temperature ~ Index, data = ambient, span = 0.25)
+loessModel <- loess(Temperature ~ as.numeric(X...Date...Time),
+                    data = ambient[750:9364,], span = SPAN)
 
-# Get smoothed output:
-smoothed25 <- predict(loessMod25)
+# Create column in ambient dataset:
+ambient$Temp_Smooth <- NA
 
-# Plot result:
-plot(smoothed25, type = "l")
-
-# Reduce span:
-loessMod10 <- loess(Temperature ~ Index, data = ambient, span = 0.10)
-
-# Get smoothed output:
-smoothed10 <- predict(loessMod10)
+# Get smoothed output and assign that to the column Temp_Smooth:
+ambient$Temp_Smooth[750:9364] <- predict(loessModel)
 
 # Plot result:
-plot(smoothed10, type = "l")
-
-# Reduce span further:
-loessMod5 <- loess(Temperature ~ Index, data = ambient, span = 0.05)
-
-# Get smoothed output:
-smoothed5 <- predict(loessMod5)
-
-# Plot result:
-plot(smoothed5, type = "l")
-
-# Reduce span some more:
-loessMod3 <- loess(Temperature ~ Index, data = ambient, span = 0.03)
-
-# Get smoothed output:
-smoothed3 <- predict(loessMod3)
-
-# Plot result:
-plot(smoothed3, type = "l")
-
-# Reduce span even futher:
-loessMod1 <- loess(Temperature ~ Index, data = ambient, span = 0.01)
-
-# Get smoothed output:
-smoothed1 <- predict(loessMod1)
-
-# Plot result:
-plot(smoothed1, type = "l")
+plot(x = ambient$X...Date...Time, y = ambient$Temp_Smooth, type = "l")
