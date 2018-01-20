@@ -67,3 +67,11 @@ plot(result$signals,type="S",col="red",ylab="",xlab="",ylim=c(-1.5,1.5),lwd=2)
 # This functions needs extensive tweaking for it to be useful. The idea of flagging
 # a peak or a valley if the value in the data differs from the average value plus or
 # minus a number of times the standard deviation seems OK, though.
+#
+# We need a function that:
+#
+# 1.
+# Assesses if the (smoothed) temp value is lower than the mean minus 1x the
+# standard deviation or higher than the mean plus 1x the standard deviation.
+# When its lower we can flag the value as part of a valley, if it's higher
+# we can mark it as member of a peak.
