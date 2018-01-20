@@ -1,6 +1,6 @@
 # Now that we have some reasonably clean data, we can do something with it. Like
 # plot some graphs:
-plot(ambient, type = "l")
+plot(ambient$X...Date...Time, ambient$Temperature, type = "l")
 
 # Add average to the plot:
 ambient_mean <- mean(ambient$Temperature, na.rm = T)
