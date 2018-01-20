@@ -16,3 +16,5 @@ https://en.wikipedia.org/wiki/Persistent_homology
 [*] Dit algoritme gaan we proberen toe te passen op de data; kijken hoe dat uitpakt. Zie PEAKS.R.
 
 3. Kan de data worden gecomprimeerd? Smoothing functie? Loess???
+
+>> Loess is hier prima voor geschikt. Zie SMOOTH.R voor details.
