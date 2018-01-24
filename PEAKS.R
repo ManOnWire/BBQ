@@ -87,3 +87,16 @@ ambient$Peak_Member[ambient$Temperature <= PeakLimit] <- FALSE
 ambient$Val_Member[ambient$Temperature < ValleyLimit] <- TRUE
 ambient$Val_Member[ambient$Temperature >= ValleyLimit] <- FALSE
 
+# 2.
+# Find successive observations where Peak_Member is FALSE - TRUE (for beginning) and
+# TRUE - FALSE (for the end).
+#
+# Find successive observations where Val_Member is FALSE - TRUE (for beginning) and
+# TRUE - FALSE (for the end).
+#
+# Take the special circumstances for absolute beginning / ending of the data into
+# account: TRUE - FALSE for starters indicates that the dataset started out with a
+# peak / valley. It could also end with a peak / valley if the last pair of
+# observations indicating a switch reads FALSE - TRUE...
+
+
